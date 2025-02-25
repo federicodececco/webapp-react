@@ -1,5 +1,6 @@
 import axios from '../api/axiosCompiled'
 import { useEffect, useState } from 'react'
+import Card from '../components/Card'
 import React from 'react'
 export default function Home() {
   const [movies, setMovies] = useState([])
@@ -14,7 +15,8 @@ export default function Home() {
       <div>
         <h1>ciao</h1>
         {movies.map(movie => {
-          return <div key={movie.id}>{movie.title}</div>
+          console.log(movie)
+          return <Card movie={movie} key={movie.id} />
         })}
       </div>
     </>
