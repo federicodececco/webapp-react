@@ -7,7 +7,7 @@ import DetailsButton from '../components/UI/DetailsButton'
 import DetailsSpan from '../components/UI/DetailsSpan'
 import Reviews from '../components/Reviews'
 export default function Detail() {
-  const [details, setDetails] = useState([])
+  const [details, setDetails] = useState({})
   const { id } = useParams()
   const navigate = useNavigate()
 
@@ -94,29 +94,17 @@ export default function Detail() {
         </div>
       </div>
       <div>
-        <div className='m-auto my-3 max-w-3xl rounded-sm bg-slate-200 p-2 text-xl outline-yellow-400 outline-solid'>
-          <div>
-            <h2>Name</h2>
-            <h2>Vote</h2>
-          </div>
-          <div>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore non
-            asperiores deleniti temporibus ratione laborum, porro quia at sunt
-            esse quas, recusandae ea omnis cupiditate consectetur.
-          </div>
-        </div>
-        <div className='m-auto my-3 max-w-3xl rounded-sm bg-slate-200 p-2 text-xl outline-yellow-400 outline-solid'>
-          <div>
-            <h2>Name</h2>
-            <h2>Vote</h2>
-          </div>
-          <div>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore non
-            asperiores deleniti temporibus ratione laborum, porro quia at sunt
-            esse quas, recusandae ea omnis cupiditate consectetur.
-          </div>
-        </div>
-        <Reviews arr={details.reviews}></Reviews>
+        {details.reviews &&
+          details.reviews.map(elem => {
+            return (
+              <Reviews
+                name={elem.name}
+                vote={elem.vote}
+                text={elem.text}
+                key={elem.id}
+              />
+            )
+          })}
       </div>
     </>
   )
