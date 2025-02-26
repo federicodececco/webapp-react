@@ -1,4 +1,6 @@
 import { useNavigate } from 'react-router'
+
+import MoreButton from './MoreButton'
 export default function Card({ movie }) {
   const navigate = useNavigate()
   const handleNav = () => {
@@ -14,7 +16,7 @@ export default function Card({ movie }) {
           <h1 className='pt-3 text-center'>{movie.title}</h1>
         </div>
         <div className='pt-3 text-center'>
-          <button onClick={handleNav}>details...</button>
+          <MoreButton click={handleNav}>more...</MoreButton>
         </div>
       </div>
     </>
