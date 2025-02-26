@@ -6,11 +6,14 @@ export default function Card({ movie }) {
   }
   return (
     <>
-      <div>
-        <div>
-          <h1 className='text-green'>{movie.title}</h1>
+      <div className='my-3 h-80 rounded-md bg-slate-200 shadow-md'>
+        <div className='h-2/3'>
+          <img src={movie.image} alt='' />
         </div>
         <div>
+          <h1 className='pt-3 text-center'>{movie.title}</h1>
+        </div>
+        <div className='pt-3 text-center'>
           <button onClick={handleNav}>details...</button>
         </div>
       </div>
