@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <>
-      <footer className='mt-3 bg-slate-600'>
+      <footer className='sticky bottom-0 mt-3 w-full bg-slate-600'>
         <div className='mx-auto flex h-full max-w-3xl'>
           <section className='grid basis-1/2 grid-cols-2'>
             <div className='col-start-1'>

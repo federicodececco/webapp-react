@@ -4,8 +4,8 @@ import Footer from '../components/Footer'
 export default function DefaultLayout() {
   return (
     <>
-      <div className='h-screen'>
-        <div>
+      <div className=''>
+        <div className=''>
           <div className='h-1/8'>
             <Header />
           </div>
