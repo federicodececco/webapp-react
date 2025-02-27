@@ -3,6 +3,7 @@ import { useParams } from 'react-router'
 import axios from '../api/axiosCompiled'
 import { useNavigate } from 'react-router'
 
+import ReviewsForm from '../components/ReviewsForm'
 import DetailsButton from '../components/UI/DetailsButton'
 import DetailsSpan from '../components/UI/DetailsSpan'
 import Reviews from '../components/Reviews'
@@ -10,8 +11,6 @@ export default function Detail() {
   const [details, setDetails] = useState({})
   const { id } = useParams()
   const navigate = useNavigate()
-
-  const arr = [1, 2, 3, 4, 5, 6]
 
   {
     /*function that uses id and setDetails
@@ -57,7 +56,9 @@ export default function Detail() {
   return (
     <>
       <div className='m-auto grid max-w-3xl grid-cols-2 rounded-lg shadow-md'>
-        <div className='bg-slate-200'>Image Placeholder</div>
+        <div className='bg-slate-200'>
+          {details.image && <img src={`/${details.image}`} alt='' />}
+        </div>
         <div className='rounded-r-lg bg-slate-100 px-3 py-4'>
           <div className='text-center'>
             <h1 className='pb-3 text-3xl font-extrabold'>{details.title}</h1>
@@ -105,6 +106,7 @@ export default function Detail() {
               />
             )
           })}
+        <ReviewsForm fetchDetails={fetchDetails} />
       </div>
     </>
   )
