@@ -44,6 +44,9 @@ export default function ReviewsForm({ fetchDetails }) {
         value={formData.name}
         onChange={e => handleChange('name', e.target.value)}
       />
+      <label htmlFor='vote' className='pr-2'>
+        Vote
+      </label>
       <input
         className='w-8 border-b border-solid text-center'
         type='number'
